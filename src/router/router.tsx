@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const HomePage = React.lazy(() => import('../pages/home/home'));
 const NotFoundPage = React.lazy(() => import('../pages/not-found'));
@@ -13,5 +13,5 @@ export default function Router() {
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </BrowserRouter>
-    )
+    );
 }

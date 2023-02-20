@@ -1,0 +1,28 @@
+{
+    "trailingComma": "none",
+    "semi": true,
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "arrowParens": "always",
+    "useTabs": false,
+    "endOfLine": "auto",
+    "printWidth": 100,
+    "tabWidth": 4,
+    "eslintIntegration": true,
+    "tslintIntegration": true,
+    "htmlWhitespaceSensitivity": "ignore",
+    "ignorePath": ".prettierignore",
+    "jsxBracketSameLine": false,
+    "parser": "babel-ts",
+    "requireConfig": true,
+    "stylelintIntegration": false,
+    "overrides": [
+        {
+            "files": "src/**/*.scss",
+            "options": {
+                "parser": "scss"
+            }
+        }
+    ]
+}

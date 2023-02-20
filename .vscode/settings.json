@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "eslint.enable": true,
+    "stylelint.enable": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.requireConfig": true,
+    "stylelint.customSyntax": "postcss-scss",
+}
