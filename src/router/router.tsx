@@ -1,16 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import withLoadingComponent from '../components/withLoadingComp';
 
 const HomePage = React.lazy(() => import('../pages/home/home'));
+const ThreePage = React.lazy(() => import('../pages/three/index'));
 const NotFoundPage = React.lazy(() => import('../pages/not-found'));
 
 export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/home" element={<HomePage />} />
-                <Route path="*" element={<NotFoundPage />} />
+                <Route path="/" element={<Navigate to={'/home'} />} />
+                <Route path="home" element={withLoadingComponent(<HomePage />)} />
+                <Route path="three" element={withLoadingComponent(<ThreePage />)} />
+                <Route path="*" element={withLoadingComponent(<NotFoundPage />)} />
             </Routes>
         </BrowserRouter>
     );

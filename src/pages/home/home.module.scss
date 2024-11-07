@@ -1,0 +1,94 @@
+.homePage {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .button {
+        position: relative;
+        width: 240px;
+        height: 60px;
+        font-size: 24px;
+        line-height: 60px;
+        color: #222;
+        text-align: center;
+        background: linear-gradient(45deg, transparent 5%, #fff 5%);
+        border: 0;
+        outline: transparent;
+        box-shadow: 6px 0 0 #666;
+        cursor: pointer;
+
+        --slice-0: inset(50% 50% 50% 50%);
+        --slice-1: inset(80% -6px 0 0);
+        --slice-2: inset(50% -6px 30% 0);
+        --slice-3: inset(10% -6px 85% 0);
+        --slice-4: inset(40% -6px 43% 0);
+        --slice-5: inset(80% -6px 5% 0);
+
+        &::after {
+            content: 'ENTER PAGE';
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(45deg, transparent 3%, #666 3%, #666 5%, #fff 5%);
+            text-shadow: -3px -3px 0 #f8f005, 3px 3px 0 #00e6f6;
+            clip-path: var(--slice-0);
+        }
+
+        &:hover::after {
+            animation: ani 1s infinite steps(2, end);
+        }
+
+        @keyframes ani {
+            0% {
+                clip-path: var(--slice-1);
+                transform: translate(-20px, -10px);
+            }
+            10% {
+                clip-path: var(--slice-3);
+                transform: translate(10px, 10px);
+            }
+            20% {
+                clip-path: var(--slice-4);
+                transform: translate(0px, 10px);
+            }
+            30% {
+                clip-path: var(--slice-1);
+                transform: translate(10px, 0px);
+            }
+            40% {
+                clip-path: var(--slice-2);
+                transform: translate(-10px, 10px);
+            }
+            50% {
+                clip-path: var(--slice-5);
+                transform: translate(10px, -10px);
+            }
+            60% {
+                clip-path: var(--slice-1);
+                transform: translate(0px, -10px);
+            }
+            70% {
+                clip-path: var(--slice-3);
+                transform: translate(10px, 0);
+            }
+            80% {
+                clip-path: var(--slice-2);
+                transform: translate(-10px, 10px);
+            }
+            90% {
+                clip-path: var(--slice-4);
+                transform: translate(10px, 10px);
+            }
+            100% {
+                clip-path: var(--slice-1);
+                transform: translate(0, 0);
+            }
+        }
+    }
+}
